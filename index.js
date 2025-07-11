@@ -7,7 +7,7 @@ const session = require('express-session');
 var flash = require('express-flash');
 var path = require('path');
 require('dotenv').config()
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 
 const routeAdmin = require("./routes/admin/index.route.js");
 const route = require("./routes/client/index.route.js");
@@ -29,7 +29,12 @@ app.locals.prefixAdmin = systemConfig.prefixAdmin;
 
 // Flash
 app.use(cookieParser('MyCommerce'));
-app.use(session({ cookie: { maxAge: 60000 }}));
+app.use(session({ 
+    secret: 'MyCommerce',
+    resave: false,
+    saveUninitialized: false,
+    cookie: { maxAge: 60000 }
+}));
 app.use(flash());
 // End Flash
 

@@ -3,13 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --inspect index.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "nodemon --inspect index.js",
-    "client": "cd client && npm start",
-    "build": "cd client && npm run build",
-    "install-client": "cd client && npm install",
-    "heroku-postbuild": "npm run install-client && npm run build",
+    "start": "node index.js",
+    "dev": "nodemon --inspect index.js",
+    "build": "echo 'No build step required for Node.js app'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
