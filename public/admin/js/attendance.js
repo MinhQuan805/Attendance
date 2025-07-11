@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       try {
         // Gửi request lên server
-        const res = await fetch('/admin/attendance/update', {
+        const res = await fetch('/admin/update', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({studentId, courseId, index, currentStatus})

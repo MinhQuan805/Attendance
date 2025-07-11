@@ -29,7 +29,7 @@ module.exports.create = async (req, res) => {
 module.exports.createPost = async (req, res) => {
     let newAttendance = new Attendance(req.body);
     await newAttendance.save();
-    res.redirect(`${systemConfig.prefixAdmin}/attendance`);
+    res.redirect(`${systemConfig.prefixAdmin}`);
 }
 
 module.exports.updateAttendance = async (req, res) => {
