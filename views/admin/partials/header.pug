@@ -1,0 +1,36 @@
+header.header 
+  .container-fluid 
+    .row.align-items-center 
+      .col-3 
+        .inner-logo
+          a(href="/admin/dashboard") ADMIN 
+      .col-3
+      .col-5
+        style.
+          .admin-link {
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+            padding: 6px 16px;
+            border-radius: 20px;
+            display: inline-block;
+          }
+          .admin-link:hover {
+            background: #e9ecef;
+            color: #202020;
+            text-decoration: none;
+          }
+        a.admin-link(
+          href=`${prefixAdmin}/attendance`
+        ) Bảng điểm danh
+        a.admin-link(
+          href=`${prefixAdmin}/student`
+        ) Học sinh
+      .col-1
+        div(class="text-right")
+          a(
+            href=`${prefixAdmin}/auth/logout`
+            class="btn btn-danger btn-sm"
+          ) Đăng xuất
+  

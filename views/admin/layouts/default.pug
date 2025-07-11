@@ -1,0 +1,26 @@
+// Đã import Bootstrap rồi nhé, cả CSS và JS đều đã được thêm vào.
+
+doctype html 
+html
+  head
+    title #{pageTitle}
+    // Import Bootstrap CSS
+    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous")
+    link(rel="stylesheet", href="/admin/css/style.css")
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css")
+    script(src="https://cdn.jsdelivr.net/npm/flatpickr")
+  body
+    include ../partials/header.pug
+    
+    .body
+      .main
+        block main
+
+    include ../partials/footer.pug
+    // Import Bootstrap JS Bundle
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js")
+    script(src="/admin/js/script.js")
+    //- TinyMCE
+    script(src="/tinymce/tinymce.min.js")
+    script(src="/admin/js/tinyMCE-config.js")
+    //- End TinyMCE

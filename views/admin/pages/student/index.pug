@@ -1,0 +1,43 @@
+extends ../../layouts/default.pug
+include ../../mixins/alert.pug
+
+block main
+  +alert-success("5000")
+  +alert-error("3000")
+  .card.mb-3
+    .card-header Danh Sách Học Sinh
+      .card-body
+        .row.mb-3
+          .col-3
+            .form-group
+              input(
+                type="text"
+                name="ids"
+                value=""
+                class="form-control d-none"
+              )
+          .col-6
+            a.btn.btn-primary(href=`/admin/student/create/`) Thêm học sinh
+        .row
+          table.table.table-bordered
+            thead
+              tr
+                th STT
+                th Họ và tên
+                th Số điện thoại
+                th Email
+                th Facebook
+                th Khóa học
+            tbody
+              each student, index in attendances
+                tr
+                  td #{index + 1}
+                  td #{student.fullName}
+                  td #{student.phone}
+                  td #{student.email}
+                  td #{student.facebook}
+                  td
+                    each course in student.course
+                      span #{course.course_id}, 
+  form(action="", method="POST", id="changeDate")
+  script(src="/admin/js/attendance.js")
